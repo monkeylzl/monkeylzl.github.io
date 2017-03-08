@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android | monkeylzl</title>
+  <meta name="author" content="John Doe">
+  
+  <meta name="description" content="Android环境的搭建主要有三个部分：JDK，IDE，SDK
+JDK由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置
+
+下载JDK，官网下载地址http://www.oracle.com/technetwork/java/javase/downloads/jdk8-">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Android"/>
+  <meta property="og:site_name" content="monkeylzl"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="monkeylzl" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37439567-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <div class='profile'>
+  <h1><a href="/"><img class="logo" src="/css/img/logo.png"/></a></h1>
+  <h2>
+  	<a href="/">
+  	monkeylzl
+  	
+  	</a>
+  </h2>
+</div>
+<nav id="main-nav">
+  <ul class='inner'>
+    
+      <li><a href="/">博客</a></li>
+    
+      <li><a href="/archives">存档</a></li>
+    
+      <li><a href="/works">那些“坑”</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+  </header>
+  <div id="content" class="inner">
+    <div id="main-col"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">Android</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Android环境的搭建主要有三个部分：JDK，IDE，SDK</p>
+<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置</p>
+<ol>
+<li>下载JDK，官网下载地址<a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>，选择相应的JDK。<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JDK.png" alt=""><br></center><br>安装过程中可以自定义路径，这里以”D:\Java\jdk1.8.0_101”和”D:\Java\jre1.8.0_101”为例，注意安装路径中不要出现中文或者是空格，等待安装完。<br>JDK=Java Development Kit，Java开发工具集，主要包括JRE和编译器组件。是进行Java开发的必要环境。所以安装JDK就包括JRE的安装。JDK是JRE的完全超集。<br>JRE=Java Runtime Environment，Java运行时环境，主要提供运行Java Class的环境。JDK中本身包含JRE。如果只想运行Java程序，而不需要进行编译（非开发环境，生产环境），可以安装JRE，不用安装JDK。<br>JVM=Java Virtue Machine，Java虚拟机。Java是一种半编译半解释程序，.java源程序经过编译后生成字节码文件.class文件。JVM虚拟机就是一个虚拟的计算机专门用来运行Java程序的虚拟计算机。JVM虚拟机会在安装JRE的时候自动安装</li>
+<li>配置环境变量<br>我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量,配置JAVA_HOME，PATH，CLASSPATH。  </li>
+</ol>
+<p><strong>用户变量</strong>  </p>
+<ul>
+<li><p>变量名：JAVA_HOME，<br>变量值：D:\Java\jdk1.8.0_101（填写自己的安装路径）  </p>
+</li>
+<li><p>变量名：Path<br>变量值：D:\Java\jdk1.8.0_101\bin<br>注意：原来Path变量中有的变量值不要覆盖，直接将D:\MyEclipse\Java\jdk1.8.0_101\bin放在最前面，最后加分号进行隔离  </p>
+<p><strong>系统变量</strong>  </p>
+</li>
+<li>变量名：CLASSPATH<br>变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>注意：最前面的点不要忘记，JAVA_HOME是java安装目录,但要加上2个%比如%JAVA_HOME%系统才能识别  <center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/variable.png" alt=""><br></center>  
+</li>
+</ul>
+<ol>
+<li>配置成功之后，运行cmd（win+R），测试java和javac命令，出现如图所示表示配置成功。<center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjava.png" alt=""><br></center><br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjavac.png" alt=""><br></center>
+</li>
+</ol>
+<ul>
+<li>可以运行java -version命令查看自己的JDK版本,确定java version版本与文件夹D:\Java\jdk1.8.0_101一致，位数与自己电脑的一致。<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JavaVersion.png" alt=""><br></center><h4 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h4><strong>Android Studio的安装</strong></li>
+<li>下载<a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android Developer官网</a></li>
+<li>安装时按照提示即可，安装过程中会提示SDK的安装路径，<strong>注意一定不要包含空格等特殊字符</strong></li>
+<li>第一次打开会出现如下情况<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/problem.png" alt=""><br></center><br>为了避免，可以在第一次运行AS时要在D:\Android\Android Studio\bin\idea.properties中添加<br>disable.android.first.run=true即可</li>
+</ul>
+<h4 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h4><ul>
+<li>在安装Android Studio时刻会安装SDK，但是需要更多的Android版本时，需要打开SDK Manager下载，此时需要进行翻墙，可以进行如下设置，选择Tools-&gt;options,进行下图的设置，一定要勾选Force…  <center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Internet.png" alt=""><br></center><br>设置完之后，选择Packages-&gt;Reload，即可下载更新<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Reload.png" alt=""><br></center>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+          
+          
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  <div id="profile"></div>
+
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+</div></div>
+    <!--
+    <aside id="sidebar" class="alignright" style="display:none">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+</aside>
+    
+    -->
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2017 John Doe
+  
+  
+    <a class="icon github" href="https://github.com/yunlzheng">github</a>
+    <a href="http://weibo.com/503error">weibo</a>
+    <a href="http://www.google.com">google+</a>
+  
+</div>
+
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"moo123"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>

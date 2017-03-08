@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>monkeylzl</title>
+  <title>Java之继承 | monkeylzl</title>
   <meta name="author" content="John Doe">
+  
+  <meta name="description" content="继承定义继承是类与类的一种关系，是一种“is a”的关系。继承是从已有的类中派生出新的类，新的类能吸收已有类的数据属性和行为，并能扩展新能力。
+语法1class 子类 extends 父类&amp;#123;&amp;#125;
+规则
+子类继承父类时，子类是不可以继承父类的构造函数，必须调用父类的构造函数具有两种情">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Java之继承"/>
   <meta property="og:site_name" content="monkeylzl"/>
 
   
@@ -63,8 +68,7 @@
 <div class="clearfix"></div>
   </header>
   <div id="content" class="inner">
-    <div id="main-col"><div id="wrapper">
-  <article class="post">
+    <div id="main-col"><div id="wrapper"><article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -82,7 +86,7 @@
     <header>
       
   
-    <h1 class="title"><a href="/2017/03/09/Java之继承/">Java之继承</a></h1>
+    <h1 class="title">Java之继承</h1>
   
 
     </header>
@@ -115,96 +119,31 @@
     </div>
     <footer>
       
-        <div class="alignleft">
-            <a href="/2017/03/09/Java之继承/#more" class="more-link">Read More</a>
-        </div>
-        
-        
-          <div class="alignleft"> 
-            <span class="ds-thread-count" data-thread-key="/2017/03/09/Java之继承/">&nbsp;
-            </span>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+          
+          
+          
+  <div class="addthis addthis_toolbox addthis_default_style">
     
-      <img src="">
     
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2017/03/08/Android/">Android</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Android环境的搭建主要有三个部分：JDK，IDE，SDK</p>
-<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置</p>
-<ol>
-<li>下载JDK，官网下载地址<a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>，选择相应的JDK。<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JDK.png" alt=""><br></center><br>安装过程中可以自定义路径，这里以”D:\Java\jdk1.8.0_101”和”D:\Java\jre1.8.0_101”为例，注意安装路径中不要出现中文或者是空格，等待安装完。<br>JDK=Java Development Kit，Java开发工具集，主要包括JRE和编译器组件。是进行Java开发的必要环境。所以安装JDK就包括JRE的安装。JDK是JRE的完全超集。<br>JRE=Java Runtime Environment，Java运行时环境，主要提供运行Java Class的环境。JDK中本身包含JRE。如果只想运行Java程序，而不需要进行编译（非开发环境，生产环境），可以安装JRE，不用安装JDK。<br>JVM=Java Virtue Machine，Java虚拟机。Java是一种半编译半解释程序，.java源程序经过编译后生成字节码文件.class文件。JVM虚拟机就是一个虚拟的计算机专门用来运行Java程序的虚拟计算机。JVM虚拟机会在安装JRE的时候自动安装</li>
-<li>配置环境变量<br>我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量,配置JAVA_HOME，PATH，CLASSPATH。  </li>
-</ol>
-<p><strong>用户变量</strong>  </p>
-<ul>
-<li><p>变量名：JAVA_HOME，<br>变量值：D:\Java\jdk1.8.0_101（填写自己的安装路径）  </p>
-</li>
-<li><p>变量名：Path<br>变量值：D:\Java\jdk1.8.0_101\bin<br>注意：原来Path变量中有的变量值不要覆盖，直接将D:\MyEclipse\Java\jdk1.8.0_101\bin放在最前面，最后加分号进行隔离  </p>
-<p><strong>系统变量</strong>  </p>
-</li>
-<li>变量名：CLASSPATH<br>变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>注意：最前面的点不要忘记，JAVA_HOME是java安装目录,但要加上2个%比如%JAVA_HOME%系统才能识别  <center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/variable.png" alt=""><br></center>  
-</li>
-</ul>
-<ol>
-<li>配置成功之后，运行cmd（win+R），测试java和javac命令，出现如图所示表示配置成功。<center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjava.png" alt=""><br></center><br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjavac.png" alt=""><br></center>
-</li>
-</ol>
-<ul>
-<li>可以运行java -version命令查看自己的JDK版本,确定java version版本与文件夹D:\Java\jdk1.8.0_101一致，位数与自己电脑的一致。<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JavaVersion.png" alt=""><br></center><h4 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h4><strong>Android Studio的安装</strong></li>
-<li>下载<a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android Developer官网</a></li>
-<li>安装时按照提示即可，安装过程中会提示SDK的安装路径，<strong>注意一定不要包含空格等特殊字符</strong></li>
-<li>第一次打开会出现如下情况<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/problem.png" alt=""><br></center><br>为了避免，可以在第一次运行AS时要在D:\Android\Android Studio\bin\idea.properties中添加<br>disable.android.first.run=true即可</li>
-</ul>
-<h4 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h4><ul>
-<li>在安装Android Studio时刻会安装SDK，但是需要更多的Android版本时，需要打开SDK Manager下载，此时需要进行翻墙，可以进行如下设置，选择Tools-&gt;options,进行下图的设置，一定要勾选Force…  <center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Internet.png" alt=""><br></center><br>设置完之后，选择Packages-&gt;Reload，即可下载更新<br><center><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Reload.png" alt=""><br></center>
-</li>
-</ul>
-
-      
+  <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_icons_1"></a>
+        <a class="jiathis_button_icons_2"></a>
+        <a class="jiathis_button_icons_3"></a>
+        <a class="jiathis_button_icons_4"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
     </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2017/03/08/Android/#more" class="more-link">Read More</a>
-        </div>
-        
-        
-          <div class="alignleft"> 
-            <span class="ds-thread-count" data-thread-key="/2017/03/08/Android/">&nbsp;
-            </span>
-          </div>
-        
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+
       
       <div class="clearfix"></div>
     </footer>
@@ -212,75 +151,22 @@
 </article>
 
 
+  <div id="profile"></div>
 
 
 
+<section id="comment">
+  <h1 class="title">留言</h1>
 
-  <article class="post">
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<!-- Duoshuo Comment END -->
   
-  <div class="post-content">
-    <header>
-      
-  
-    <h1 class="title"><a href="/2017/03/07/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer>
-      
-        <div class="alignleft">
-            <a href="/2017/03/07/hello-world/#more" class="more-link">Read More</a>
-        </div>
-        
-        
-          <div class="alignleft"> 
-            <span class="ds-thread-count" data-thread-key="/2017/03/07/hello-world/">&nbsp;
-            </span>
-          </div>
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+</section>
 
 
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <!--
     <aside id="sidebar" class="alignright" style="display:none">
   <div class="search">
