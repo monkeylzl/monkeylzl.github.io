@@ -1,7 +1,7 @@
 ---
 title: Java之继承
 date: 2017-03-09 09:50:41
-tags:
+tags: Java
 ---
 ## 继承
 ### 定义

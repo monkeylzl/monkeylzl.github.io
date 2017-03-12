@@ -1,7 +1,7 @@
 ---
 title: Android
 date: 2017-03-08 09:40:01
-tags:
+tags: Android
 ---
 Android环境的搭建主要有三个部分：JDK，IDE，SDK
 #### JDK
