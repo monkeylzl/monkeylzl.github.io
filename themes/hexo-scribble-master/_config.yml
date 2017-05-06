@@ -1,0 +1,21 @@
+title: monkeylzl
+description: 热爱生活，拥抱自我！
+
+menu:
+  Blog: /
+  About: /about
+#  Email: mailto:saintwinkle@gmail.com
+  Github: https://github.com/monkeylzl
+
+#  RSS: /atom.xml
+
+#rss: /atom.xml
+
+# your name
+signoff: Scribble
+
+# disqus comment thread for post header options ( leave blank if unwanted )
+disqus_shortname:
+
+# set tracking, UA-XXXX-Y
+google_analytics:
