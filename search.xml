@@ -49,6 +49,8 @@
     <title>美团面试</title>
     <url>/2017/05/06/%E7%BE%8E%E5%9B%A2%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<p>今天参加了美团的暑期实习的 Android 的开发岗，在此进行一下总结：</p>
+<span id="more"></span>
+
 <ol>
 <li>简历，一定要体现真诚，不会的不知道的一定不要写，因为面试的一面基本上就是按照简历来问。</li>
 <li>面试的过程中，最大限度的表达出自己所知道的东西，即使是对考官所提问题不是很了解，但稍微相关的可以自己提出来，引导主考官向自己熟悉的地方继续问，有效地沟通。</li>
@@ -103,6 +105,7 @@
     <title>Android</title>
     <url>/2017/03/08/Android/</url>
     <content><![CDATA[<p>Android环境的搭建主要有三个部分：JDK，IDE，SDK</p>
+<span id="more"></span>
 <h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置</p>
 <ol>
 <li>下载JDK，官网下载地址<a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>，选择相应的JDK。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JDK.png"><br>安装过程中可以自定义路径，这里以”D:\Java\jdk1.8.0_101”和”D:\Java\jre1.8.0_101”为例，注意安装路径中不要出现中文或者是空格，等待安装完。<br>JDK=Java Development Kit，Java开发工具集，主要包括JRE和编译器组件。是进行Java开发的必要环境。所以安装JDK就包括JRE的安装。JDK是JRE的完全超集。<br>JRE=Java Runtime Environment，Java运行时环境，主要提供运行Java Class的环境。JDK中本身包含JRE。如果只想运行Java程序，而不需要进行编译（非开发环境，生产环境），可以安装JRE，不用安装JDK。<br>JVM=Java Virtue Machine，Java虚拟机。Java是一种半编译半解释程序，.java源程序经过编译后生成字节码文件.class文件。JVM虚拟机就是一个虚拟的计算机专门用来运行Java程序的虚拟计算机。JVM虚拟机会在安装JRE的时候自动安装</li>
@@ -146,6 +149,7 @@
     <title>Java之继承</title>
     <url>/2017/03/09/Java%E4%B9%8B%E7%BB%A7%E6%89%BF/</url>
     <content><![CDATA[<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>继承是类与类的一种关系，是一种“is a”的关系。<br>继承是从已有的类中派生出新的类，新的类能吸收已有类的数据属性和行为，并能扩展新能力。</p>
+<span id="more"></span>
 <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">extends</span> 父类</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ol>
 <li>子类继承父类时，子类是不可以继承父类的构造函数，必须调用父类的构造函数<br>具有两种情况：<br>第一种：隐含super()形式，父类具有无参构造器或默认构造器</li>
@@ -166,6 +170,9 @@
 若没有继承，这种代码的重复是不可避免的。</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
         <tag>Java</tag>
       </tags>
