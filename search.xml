@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/09/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>百度地图面试</title>
     <url>/2017/05/16/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<p>这次「百度地图的 Android 开发」面试问的非常基础，基本是涵盖了所有的Java的基础和Android的基础，数据结构和算法没有涉及到，非常的详细，很小的知识点都会覆盖，和自己最初准备的还是有些差距同时也让我认识到了基础的重要性吧，还是有些漏洞的。</p>
@@ -56,6 +38,9 @@
 <p>③突然意识到了自己的一个更大的问题，想与表达出来，平时大部分都是和自己待在一起，自己在思考，在纸上练习，很少将自己想的东西表达出来，导致面试的时候可能想到了，但是考官没有问到，也就没有说出来。</p>
 <p>④还有一点就是参加面试的前一天最好不在看新的的知识，而是踏踏实实的把自己看过的知识好好的巩固一下。因为看新的知识，可能很幸运恰好被问到，但是由于刚刚看过们很可能由于轻微的紧张根本想不到，就像这次的  bitmap 当时就没有想到加载和缓存这块，所以功夫要下在平时，抛弃一些安全感，并将面试看成一次自我的检验，过后总结补充。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
         <tag>面试记录</tag>
       </tags>
@@ -107,6 +92,12 @@
 <p>第二个层次：和别人探讨，在自己经过努力查找之后，可能依然没有弄明白，这时我会找最方便的对这方面有所了解的人，直接进行探讨。</p>
 <p>第三个层次：这个也是我是一直渴望的，希望能有一个经验上技术上的大牛，进行指点，比如向您一样的人，因为他们对于技术的理解要远高于我，可能他们的一句话，就能让我恍然大悟。当然，这些大牛也很忙，这就需要我前面的几个层次的准备，这个问题经过努力仍未解决。我认为我也希望能够帮助这些大牛做些力所能及的事，因为我感觉一味的索取总是让人感觉不舒服，所以对于帮助过我的人，我也会尽自己所能去帮助他。所以希望能够多接触这些大牛，崇拜之余不断的提升自我。</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>面试记录</tag>
+      </tags>
   </entry>
   <entry>
     <title>Android</title>
@@ -144,6 +135,9 @@
 <li>在安装Android Studio时刻会安装SDK，但是需要更多的Android版本时，需要打开SDK Manager下载，此时需要进行翻墙，可以进行如下设置，选择Tools-&gt;options,进行下图的设置，一定要勾选Force…<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Internet.png"><br>设置完之后，选择Packages-&gt;Reload，即可下载更新<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Reload.png"></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
         <tag>Android</tag>
       </tags>
