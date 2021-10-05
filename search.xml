@@ -77,55 +77,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github + Hexo 搭建属于自己的博客</title>
-    <url>/2021/10/04/github%20+%20hexo%20%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>突然想起自己之前还用github和hexo搭建过自己的博客，找到源码一看还是2017准备面试的时候写的几篇文章，一转眼已经过去了四年，有很多想要做的，也有很多想要分享记录的，那就以这个为大本营基地，趁着国庆放假，收拾收拾。背起行囊，继续出发。</p>
-<span id="more"></span>
-
-<p>种一棵树最好的时间是十年前，其次是现在。那就先简单记录一下自己Github + Hexo 搭建属于自己的博客的过程吧！</p>
-<p>在写之前还是先介绍一下两个主角：GitHub和Hexo</p>
-<h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a href="https://github.com/">GitHub</a></h1><p>GitHub是通过Git进行版本控制的软件源代码托管服务平台，已经成为了世界上最大的代码存放网站和开源社区。里面有很多有意思的东西，这次主要用到的是GitHub Pages，GitHub Pages是GitHub提供的一个网页托管服务，可以用于存放静态网页，包括博客、项目文档甚至整本书。一般GitHub Pages 的网站使用 github.io 的子域名，但是用户也可以使用第三方域名。<a href="#refer-anchor-1"><sup>1</sup></a></p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a href="https://hexo.io/zh-cn/">Hexo</a></h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<a href="#refer-anchor-2"><sup>2</sup></a></p>
-<p>接下来进入主题，搭建的主要步骤</p>
-<h1 id="步骤-Mac"><a href="#步骤-Mac" class="headerlink" title="步骤(Mac)"></a>步骤(Mac)</h1><h2 id="安装-HomeBrew（非必须）"><a href="#安装-HomeBrew（非必须）" class="headerlink" title="安装 HomeBrew（非必须）"></a>安装 <a href="https://brew.sh/">HomeBrew</a>（非必须）</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure>
-<p>该步骤并不必须的，但是在Mac上安装了HomeBrew，安装一些package将会非常方便。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a><a href="https://git-scm.com/downloads">安装Git</a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>查看是否安装成功，正常会显示当前安装的git版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<h2 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a><a href="https://github.com/">GitHub</a>创建个人仓库</h2><ul>
-<li>注册自己的Github账户</li>
-<li>创建自己的repo，命名规则为「用户名.github.io」</li>
-<li>设置user.name和user.email配置信息<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></li>
-<li>生成ssh密钥文件，一直回车即可，不需要设置密码，然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></li>
-<li>打开Github，选择账户中的settings中的<a href="https://github.com/settings/keys">SSH and GPG keys</a> 页面，点击New SSH key ，将刚刚生成的key内容复制进去，标题可以任意取</li>
-<li>检测是否已经配置成功，正常会显示「Hi monkeylzl! You’ve successfully authenticated, but GitHub does not provide shell access.<br>Connection to github.com closed.」<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh git@github.com </span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a><a href="http://nodejs.cn/learn/how-to-install-nodejs">安装Node.js</a></h2><p>安装Node.js会包含环境变量及npm的安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
-<p>检测是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><a href="https://hexo.io/zh-cn/">安装Hexo</a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h2 id="建站发布文章"><a href="#建站发布文章" class="headerlink" title="建站发布文章"></a>建站发布文章</h2><ul>
-<li>初始化，同时在该目录下创建了「blog」文件夹<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></li>
-<li>进入到「blog」文件夹进行操作<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 可以进行预览，默认有一个「Hello World」的文档</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
-<li>修改根目录下的_config.yml文件，搜索「deploy」关联上面创建的git repo<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:monkeylzl/monkeylzl.github.io.git #添加自己的repo git 地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
-<li>保存站点配置文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>创建文章并发布<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo new &quot;Test&quot;</span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
-<li>常用hexo命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] <a href="https://zh.wikipedia.org/wiki/GitHub#GitHub_Pages">Githua维基百科</a><br>[2] <a href="https://hexo.io/zh-cn/">Hexo官网</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>杂篇</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>百度地图面试</title>
     <url>/2017/05/16/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<p>这次「百度地图的 Android 开发」面试问的非常基础，基本是涵盖了所有的Java的基础和Android的基础，数据结构和算法没有涉及到，非常的详细，很小的知识点都会覆盖，和自己最初准备的还是有些差距同时也让我认识到了基础的重要性吧，还是有些漏洞的。</p>
@@ -224,6 +175,63 @@
       </categories>
       <tags>
         <tag>面试记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github + Hexo 搭建博客</title>
+    <url>/2021/10/04/Github%20+%20Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>最近突然想起自己之前还用 Github + Hexo 搭建过自己的博客，找到源码一看还是 2017 当时准备面试的时候写的几篇文章。​一转眼已经过去了四年，最近恰好有想要做的，也有想要分享的，那就重拾一下这个博客，趁着国庆放假，收拾收拾。背起行囊，继续出发。</p>
+<span id="more"></span>
+
+<p>种一棵树最好的时间是十年前，其次是现在。那就先简单记录一下自己 Github + Hexo 搭建属于自己的博客的过程吧！</p>
+<p>在写之前还是先介绍一下两个主角：GitHub 和 Hexo</p>
+<h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a href="https://github.com/">GitHub</a></h1><p>GitHub 是通过 Git 进行版本控制的软件源代码托管服务平台，已经成为了世界上最大的代码存放网站和开源社区。里面其实有很多有意思的东西。这次主要用到的是GitHub Pages，GitHub Pages 是 GitHub 提供的一个网页托管服务，可以用于存放静态网页，包括博客、项目文档甚至整本书。一般GitHub Pages 的网站使用 github.io 的子域名，但是用户也可以使用第三方域名。</p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a href="https://hexo.io/zh-cn/">Hexo</a></h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>接下来进入主题，搭建的主要步骤</p>
+<h1 id="步骤-Mac"><a href="#步骤-Mac" class="headerlink" title="步骤(Mac)"></a>步骤(Mac)</h1><h2 id="安装-HomeBrew"><a href="#安装-HomeBrew" class="headerlink" title="安装 HomeBrew"></a>安装 <a href="https://brew.sh/">HomeBrew</a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>该步骤并不必须的，但是在Mac上安装了HomeBrew，安装一些package将会非常方便。</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a><a href="https://git-scm.com/downloads">安装Git</a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<p>查看是否安装成功，正常会显示当前安装的git版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<h2 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a><a href="https://github.com/">GitHub</a>创建个人仓库</h2><ul>
+<li>注册自己的Github账户</li>
+<li>创建自己的repo，命名规则为「用户名.github.io」</li>
+<li>设置user.name和user.email配置信息<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></li>
+<li>生成ssh密钥文件，一直回车即可，不需要设置密码，然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure></li>
+<li>打开Github，选择账户中的settings中的<a href="https://github.com/settings/keys">SSH and GPG keys</a> 页面，点击New SSH key ，将刚刚生成的key内容复制进去，标题可以任意取</li>
+<li>检测是否已经配置成功，正常会显示「Hi monkeylzl! You’ve successfully authenticated, but GitHub does not provide shell access.<br>Connection to github.com closed.」<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh git@github.com </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a><a href="http://nodejs.cn/learn/how-to-install-nodejs">安装Node.js</a></h2><p>安装Node.js会包含环境变量及npm的安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<p>检测是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line"></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><a href="https://hexo.io/zh-cn/">安装Hexo</a></h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="建站发布文章"><a href="#建站发布文章" class="headerlink" title="建站发布文章"></a>建站发布文章</h2><ul>
+<li>初始化，同时在该目录下创建了「blog」文件夹<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure></li>
+<li>进入到「blog」文件夹进行操作，可以进行预览，默认有一个「Hello World」的文档<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+<li>修改根目录下的_config.yml文件，搜索「deploy」关联上面创建的git repo<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:monkeylzl/monkeylzl.github.io.git #添加自己的repo git 地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li>保存站点配置文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>创建文章并发布<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo new &quot;Test&quot;</span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+<li>常用hexo命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h1><p>这篇文章初步讲解了搭建过程，后续会介绍 Hexo 的主题配置，打造自己喜欢的博客风格。</p>
+<h1 id="个人博客的效果"><a href="#个人博客的效果" class="headerlink" title="个人博客的效果"></a>个人博客的效果</h1><ul>
+<li>可以复制链接然后打开 <a href="https://monkeylzl.github.io/">https://monkeylzl.github.io/</a></li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] GitHub 维基百科：<a href="https://zh.wikipedia.org/wiki/GitHub">https://zh.wikipedia.org/wiki/GitHub</a></p>
+<p>[2] Hexo 官网：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<p>[3] HomeBrew 官网：<a href="https://brew.sh/">https://brew.sh/</a></p>
+<p>[4] Git 安装官网：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>[5] GitHub 官网：<a href="https://github.com/">https://github.com/</a></p>
+<p>[6] Node.js 安装官网：<a href="http://nodejs.cn/learn/how-to-install-nodejs">http://nodejs.cn/learn/how-to-install-nodejs</a> </p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>杂篇</tag>
       </tags>
   </entry>
 </search>
