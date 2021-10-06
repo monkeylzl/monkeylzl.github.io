@@ -217,9 +217,7 @@
 <li>常用hexo命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h1><p>这篇文章初步讲解了搭建过程，后续会介绍 Hexo 的主题配置，打造自己喜欢的博客风格。</p>
-<h1 id="个人博客的效果"><a href="#个人博客的效果" class="headerlink" title="个人博客的效果"></a>个人博客的效果</h1><ul>
-<li>可以复制链接然后打开 <a href="https://monkeylzl.github.io/">https://monkeylzl.github.io/</a></li>
-</ul>
+<h1 id="博客效果"><a href="#博客效果" class="headerlink" title="博客效果"></a>博客效果</h1><p>可以复制链接然后打开 <a href="https://monkeylzl.github.io/">https://monkeylzl.github.io/</a></p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] GitHub 维基百科：<a href="https://zh.wikipedia.org/wiki/GitHub">https://zh.wikipedia.org/wiki/GitHub</a></p>
 <p>[2] Hexo 官网：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
 <p>[3] HomeBrew 官网：<a href="https://brew.sh/">https://brew.sh/</a></p>
@@ -231,7 +229,86 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>杂篇</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 中 Next 主题（持续更新...）</title>
+    <url>/2021/10/05/Hexo%E4%B8%AD%20Next%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>Hexo中有很多主题，可以在官网 <a href="https://hexo.io/themes/">Hexo主题</a>中查找选择自己喜欢的主题，我最终选择的是 Next，主要是因为简洁且网上的教程也比较多，这里记录下我博客的 Next 主题配置，效果详见<a href="https://monkeylzl.github.io/">我的博客</a></p>
+<span id="more"></span>
+
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>Hexo 中默认的主题是 landscape，现在更换为 Next</p>
+<h2 id="Next-官方文档："><a href="#Next-官方文档：" class="headerlink" title="Next 官方文档："></a>Next 官方文档：</h2><p><a href="https://theme-next.iissnan.com/getting-started.html">Next 0.1.0-5.4.1版本</a><br><a href="https://theme-next.js.org/">NexT 6.0.0-8.8.0版本</a></p>
+<h2 id="Next主题-github-tags-note："><a href="#Next主题-github-tags-note：" class="headerlink" title="Next主题 github tags note："></a>Next主题 github tags note：</h2><p><a href="https://github.com/iissnan/hexo-theme-next/tags">0.1.0-5.4.1版本</a><br><a href="https://github.com/theme-next/hexo-theme-next/tags">6.0.0-7.8.0版本</a><br><a href="https://github.com/next-theme/hexo-theme-next/tags">8.0.0-8.8.0版本</a></p>
+<h2 id="配置-Hexo-主题"><a href="#配置-Hexo-主题" class="headerlink" title="配置 Hexo 主题"></a>配置 Hexo 主题</h2><ul>
+<li>根据上面的版本，下载一个即可，我目前使用的是7.8.0版本</li>
+<li>将下载好的主题添加到你的博客根目录下 themes 文件夹中，其中可以看到有默认的主题 landscape</li>
+<li>修改博客根目录下_config.yml文件中的theme<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">## theme: landscape</span><br><span class="line">theme: next-7.8.0</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="配置-Next-主题"><a href="#配置-Next-主题" class="headerlink" title="配置 Next 主题"></a>配置 Next 主题</h1><h2 id="修改个人信息"><a href="#修改个人信息" class="headerlink" title="修改个人信息"></a>修改个人信息</h2><p>修改博客根目录下_config.yml文件中的 site 相关信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Monkeylzl&#x27;s World</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: 经历一个过程然后成为更好的自己</span><br><span class="line">keywords:</span><br><span class="line">author: monkeylzl</span><br><span class="line">#language: en</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改-next-的主题风格"><a href="#修改-next-的主题风格" class="headerlink" title="修改 next 的主题风格"></a>修改 next 的主题风格</h2><p>next 一共提供了四种主题风格，可以分别切换，通过<code>hexo s</code>预览一下效果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改菜单栏"><a href="#修改菜单栏" class="headerlink" title="修改菜单栏"></a>修改菜单栏</h2><h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>修改 next 主题文件夹下的_config.yml文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Usage: `Key: /link/ || icon`</span><br><span class="line"># Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.</span><br><span class="line"># Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.</span><br><span class="line"># When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -&gt; archives).</span><br><span class="line"># External url should start with http:// or https://</span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br><span class="line"></span><br><span class="line"># Enable / Disable menu icons / item badges.</span><br><span class="line">menu_settings:</span><br><span class="line">  icons: true # 是否显示各个页面的图标</span><br><span class="line">  badges: true # 是否显示分类/标签/归档页的内容量</span><br></pre></td></tr></table></figure>
+<h3 id="解决Next主题-Cannot-GET-tags-问题"><a href="#解决Next主题-Cannot-GET-tags-问题" class="headerlink" title="解决Next主题 Cannot GET /tags/ 问题"></a>解决Next主题 Cannot GET /tags/ 问题</h3><ul>
+<li>增加了新的 menu，但是点击之后显示Cannot GET /tags/<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure></li>
+<li>执行命令后，在根目录下的source下会出现tags文件下，修改 tag 文件夹下的index.md，增加type: “tags”</li>
+<li>如果你的博客已经增加了评论系统，由于评论系统默认是打开的，所以这里要屏蔽下，所以增加 comments: false</li>
+<li>示例<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">date: 2021-10-04 17:31:26</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="如何自定义Menu"><a href="#如何自定义Menu" class="headerlink" title="如何自定义Menu"></a>如何自定义Menu</h3><ul>
+<li>待研究</li>
+</ul>
+<h2 id="增加本地搜索功能"><a href="#增加本地搜索功能" class="headerlink" title="增加本地搜索功能"></a>增加本地搜索功能</h2><ul>
+<li><p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li><p>修改博客根目录下_config.yml文件，增加 search</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Search</span><br><span class="line">search:</span><br><span class="line">path: search.xml # 支持json和xml，可自行设定，索引文件的路径，相对于站点根目录</span><br><span class="line">field: post # 搜索范围，默认是 post，还可以选择 page、all，设置成 all 表示搜索所有页面</span><br><span class="line">format: html</span><br><span class="line">limit: 10000 # 限制搜索的条目数</span><br></pre></td></tr></table></figure></li>
+<li><p>修改 next 主题文件夹下的_config.yml文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local Search</span><br><span class="line"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="增加阅读全文功能"><a href="#增加阅读全文功能" class="headerlink" title="增加阅读全文功能"></a>增加阅读全文功能</h2><ul>
+<li>修改 next 主题文件夹下的_config.yml文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br><span class="line"></span><br><span class="line"># Read more button</span><br><span class="line"># If true, the read more button will be displayed in excerpt section.</span><br><span class="line">read_more_btn: true</span><br></pre></td></tr></table></figure></li>
+<li>配置完后，由于next 7.6 版本以后删除自动摘要功能，需要我们手动设置，方法主要有<ul>
+<li>为每个博客写好 description<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 中 Next 主题（持续更新...）</span><br><span class="line">date: 2021-10-04 20:52:01</span><br><span class="line">tags: 博客搭建</span><br><span class="line">categories: 技术</span><br><span class="line">description: xxxx</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li>在博客中间手动添加<!-- more -->以截断，<strong>推荐该方法</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="增加评论系统"><a href="#增加评论系统" class="headerlink" title="增加评论系统"></a>增加评论系统</h2><h3 id="选择评论系统"><a href="#选择评论系统" class="headerlink" title="选择评论系统"></a>选择评论系统</h3><p>next 支持的评论系统，详见next 主题文件夹下的_config.yml文件，我选择的是 valine</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Multiple Comment System Support</span><br><span class="line">comments:</span><br><span class="line">  # Available values: tabs | buttons</span><br><span class="line">  style: tabs</span><br><span class="line">  # Choose a comment system to be displayed by default.</span><br><span class="line">  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine</span><br><span class="line">  active: valine</span><br><span class="line">  # Setting `true` means remembering the comment system selected by the visitor.</span><br><span class="line">  storage: true</span><br><span class="line">  # Lazyload all comment systems.</span><br><span class="line">  lazyload: false</span><br><span class="line">  # Modify texts or order for any navs, here are some examples.</span><br><span class="line">  nav:</span><br><span class="line">    #disqus:</span><br><span class="line">    #  text: Load Disqus</span><br><span class="line">    #  order: -1</span><br><span class="line">    #gitalk:</span><br><span class="line">    #  order: -2</span><br></pre></td></tr></table></figure>
+<h3 id="配置-valine"><a href="#配置-valine" class="headerlink" title="配置 valine"></a>配置 <a href="https://valine.js.org/">valine</a></h3><p>Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。</p>
+<ul>
+<li>注册 <a href="https://www.leancloud.cn/">LeanCloud</a> 账号，直接点击主页右侧控制台注册账号</li>
+<li>进入控制台后点击左下角<a href="https://console.leancloud.cn/apps">创建应用</a>，选择免费的「开发版」，也可以了解下「计价方案」</li>
+<li>创建完应用，点击应用卡片中的设置图标，在左侧菜单栏中点击「应用凭证」，可以看到自己的 AppID，Appkey</li>
+<li>选择安全中心，可以选择自己的「服务开关」，然后在 Web 安全域名中添加自己博客的域名「<a href="https://monkeylzl.github.io/%E3%80%8D">https://monkeylzl.github.io/」</a></li>
+<li>修改 next 主题文件夹下的_config.yml文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Valine</span><br><span class="line"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span><br><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: xx # Your leancloud application appid</span><br><span class="line">  appkey: xx # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: 有什么问题，欢迎留言指正与交流... # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: zh-CN # Language, available values: en, zh-cn</span><br><span class="line">  visitor: false # Article reading statistic</span><br><span class="line">  comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">  recordIP: false # Whether to record the commenter IP</span><br><span class="line">  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span><br><span class="line">  #post_meta_order: 0</span><br></pre></td></tr></table></figure></li>
+<li>查看评论数据，通过点击自己创建的卡片应用的第一个图标「数据存储」中的 Comment 查看</li>
+</ul>
+<h2 id="目录设置"><a href="#目录设置" class="headerlink" title="目录设置"></a>目录设置</h2><ul>
+<li>修改 next 主题文件夹下的_config.yml文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Table of Contents in the Sidebar</span><br><span class="line"># Front-matter variable (unsupport wrap expand_all).</span><br><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  # Automatically add list number to toc.</span><br><span class="line">  number: true</span><br><span class="line">  # If true, all words will placed on next lines if header width longer then sidebar width.</span><br><span class="line">  wrap: false</span><br><span class="line">  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span><br><span class="line">  expand_all: true</span><br><span class="line">  # Maximum heading depth of generated toc.</span><br><span class="line">  max_depth: 6</span><br></pre></td></tr></table></figure></li>
+<li>next 7.8.0 版本 toc 中包含中文导致无法点击跳转问题<br>该问题官方已经FIX，详见<a href="https://github.com/theme-next/hexo-theme-next/pull/1540/files">官方修改</a></li>
+</ul>
+<p>修改 source/js/utils.js 文件，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">registerSidebarTOC: function() &#123;</span><br><span class="line">    const navItems = document.querySelectorAll(&#x27;.post-toc li&#x27;);</span><br><span class="line">    const sections = [...navItems].map(element =&gt; &#123;</span><br><span class="line">      var link = element.querySelector(&#x27;a.nav-link&#x27;);</span><br><span class="line">      var target = document.getElementById(decodeURI(link.getAttribute(&#x27;href&#x27;)).replace(&#x27;#&#x27;, &#x27;&#x27;));</span><br><span class="line">      // TOC item animation navigate.</span><br><span class="line">      link.addEventListener(&#x27;click&#x27;, event =&gt; &#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">        //var target = document.getElementById(event.currentTarget.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span><br><span class="line">        var offset = target.getBoundingClientRect().top + window.scrollY;</span><br><span class="line">        window.anime(&#123;</span><br><span class="line">          targets  : document.scrollingElement,</span><br><span class="line">          duration : 500,</span><br><span class="line">          easing   : &#x27;linear&#x27;,</span><br><span class="line">          scrollTop: offset + 10</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">      //return document.getElementById(link.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span><br><span class="line">      return target;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码风格设置"><a href="#代码风格设置" class="headerlink" title="代码风格设置"></a>代码风格设置</h2><ul>
+<li>修改 next 主题文件夹下的_config.yml文件<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Code Highlight theme</span><br><span class="line">  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span><br><span class="line">  # See: https://github.com/chriskempson/tomorrow-theme</span><br><span class="line">  #highlight_theme: normal</span><br><span class="line">  highlight_theme: night bright</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true</span><br><span class="line">    # Show text copy result.</span><br><span class="line">    show_result: true</span><br><span class="line">    # Available values: default | flat | mac</span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="暗黑模式"><a href="#暗黑模式" class="headerlink" title="暗黑模式"></a>暗黑模式</h2><ul>
+<li>Next 7.x 使用 hexo-next-darkmode 插件自动添加可切换的暗黑模式，教程详见：<a href="https://github.com/rqh656418510/hexo-next-darkmode">https://github.com/rqh656418510/hexo-next-darkmode</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
 </search>
