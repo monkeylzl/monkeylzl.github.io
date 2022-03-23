@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Android</title>
-    <url>/2017/03/08/Android/</url>
-    <content><![CDATA[<p>Android环境的搭建主要有三个部分：JDK，IDE，SDK</p>
-<span id="more"></span>
-<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置</p>
-<ol>
-<li>下载JDK，官网下载地址<a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>，选择相应的JDK。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JDK.png"><br>安装过程中可以自定义路径，这里以”D:\Java\jdk1.8.0_101”和”D:\Java\jre1.8.0_101”为例，注意安装路径中不要出现中文或者是空格，等待安装完。<br>JDK=Java Development Kit，Java开发工具集，主要包括JRE和编译器组件。是进行Java开发的必要环境。所以安装JDK就包括JRE的安装。JDK是JRE的完全超集。<br>JRE=Java Runtime Environment，Java运行时环境，主要提供运行Java Class的环境。JDK中本身包含JRE。如果只想运行Java程序，而不需要进行编译（非开发环境，生产环境），可以安装JRE，不用安装JDK。<br>JVM=Java Virtue Machine，Java虚拟机。Java是一种半编译半解释程序，.java源程序经过编译后生成字节码文件.class文件。JVM虚拟机就是一个虚拟的计算机专门用来运行Java程序的虚拟计算机。JVM虚拟机会在安装JRE的时候自动安装</li>
-<li>配置环境变量<br>我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量,配置JAVA_HOME，PATH，CLASSPATH。  </li>
-</ol>
-<p><strong>用户变量</strong>  </p>
-<ul>
-<li><p>变量名：JAVA_HOME，<br>变量值：D:\Java\jdk1.8.0_101（填写自己的安装路径）  </p>
-</li>
-<li><p>变量名：Path<br>变量值：D:\Java\jdk1.8.0_101\bin<br>注意：原来Path变量中有的变量值不要覆盖，直接将D:\MyEclipse\Java\jdk1.8.0_101\bin放在最前面，最后加分号进行隔离  </p>
-</li>
-</ul>
-<p> <strong>系统变量</strong>  </p>
-<ul>
-<li>变量名：CLASSPATH<br>变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>注意：最前面的点不要忘记，JAVA_HOME是java安装目录,但要加上2个%比如%JAVA_HOME%系统才能识别<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/variable.png"> </li>
-</ul>
-<ol start="3">
-<li>配置成功之后，运行cmd（win+R），测试java和javac命令，出现如图所示表示配置成功。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjava.png"><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjavac.png"></li>
-</ol>
-<ul>
-<li>可以运行java -version命令查看自己的JDK版本,确定java version版本与文件夹D:\Java\jdk1.8.0_101一致，位数与自己电脑的一致。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JavaVersion.png"><h4 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h4></li>
-</ul>
-<p><strong>Android Studio的安装</strong></p>
-<ul>
-<li>下载<a href="https://developer.android.com/studio/index.html">Android Developer官网</a></li>
-<li>安装时按照提示即可，安装过程中会提示SDK的安装路径，<strong>注意一定不要包含空格等特殊字符</strong></li>
-<li>第一次打开会出现如下情况<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/problem.png"><br>为了避免，可以在第一次运行AS时要在D:\Android\Android Studio\bin\idea.properties中添加<br>disable.android.first.run=true即可</li>
-</ul>
-<h4 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h4><ul>
-<li>在安装Android Studio时刻会安装SDK，但是需要更多的Android版本时，需要打开SDK Manager下载，此时需要进行翻墙，可以进行如下设置，选择Tools-&gt;options,进行下图的设置，一定要勾选Force…<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Internet.png"><br>设置完之后，选择Packages-&gt;Reload，即可下载更新<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Reload.png"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Github + Hexo 搭建博客</title>
     <url>/2021/10/04/Github%20+%20Hexo%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>最近突然想起自己之前还用 Github + Hexo 搭建过自己的博客，找到源码一看还是 2017 当时准备面试的时候写的几篇文章。​一转眼已经过去了四年，最近恰好有想要做的，也有想要分享的，那就重拾一下这个博客，趁着国庆放假，收拾收拾。背起行囊，继续出发。</p>
@@ -97,6 +53,50 @@
       </categories>
       <tags>
         <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android</title>
+    <url>/2017/03/08/Android/</url>
+    <content><![CDATA[<p>Android环境的搭建主要有三个部分：JDK，IDE，SDK</p>
+<span id="more"></span>
+<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>由于Android的主题部分采用的是Java语言，所以首先进行Java环境的配置</p>
+<ol>
+<li>下载JDK，官网下载地址<a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a>，选择相应的JDK。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JDK.png"><br>安装过程中可以自定义路径，这里以”D:\Java\jdk1.8.0_101”和”D:\Java\jre1.8.0_101”为例，注意安装路径中不要出现中文或者是空格，等待安装完。<br>JDK=Java Development Kit，Java开发工具集，主要包括JRE和编译器组件。是进行Java开发的必要环境。所以安装JDK就包括JRE的安装。JDK是JRE的完全超集。<br>JRE=Java Runtime Environment，Java运行时环境，主要提供运行Java Class的环境。JDK中本身包含JRE。如果只想运行Java程序，而不需要进行编译（非开发环境，生产环境），可以安装JRE，不用安装JDK。<br>JVM=Java Virtue Machine，Java虚拟机。Java是一种半编译半解释程序，.java源程序经过编译后生成字节码文件.class文件。JVM虚拟机就是一个虚拟的计算机专门用来运行Java程序的虚拟计算机。JVM虚拟机会在安装JRE的时候自动安装</li>
+<li>配置环境变量<br>我的电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量,配置JAVA_HOME，PATH，CLASSPATH。  </li>
+</ol>
+<p><strong>用户变量</strong>  </p>
+<ul>
+<li><p>变量名：JAVA_HOME，<br>变量值：D:\Java\jdk1.8.0_101（填写自己的安装路径）  </p>
+</li>
+<li><p>变量名：Path<br>变量值：D:\Java\jdk1.8.0_101\bin<br>注意：原来Path变量中有的变量值不要覆盖，直接将D:\MyEclipse\Java\jdk1.8.0_101\bin放在最前面，最后加分号进行隔离  </p>
+</li>
+</ul>
+<p> <strong>系统变量</strong>  </p>
+<ul>
+<li>变量名：CLASSPATH<br>变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>注意：最前面的点不要忘记，JAVA_HOME是java安装目录,但要加上2个%比如%JAVA_HOME%系统才能识别<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/variable.png"> </li>
+</ul>
+<ol start="3">
+<li>配置成功之后，运行cmd（win+R），测试java和javac命令，出现如图所示表示配置成功。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjava.png"><br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/cmdjavac.png"></li>
+</ol>
+<ul>
+<li>可以运行java -version命令查看自己的JDK版本,确定java version版本与文件夹D:\Java\jdk1.8.0_101一致，位数与自己电脑的一致。<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/JavaVersion.png"><h4 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h4></li>
+</ul>
+<p><strong>Android Studio的安装</strong></p>
+<ul>
+<li>下载<a href="https://developer.android.com/studio/index.html">Android Developer官网</a></li>
+<li>安装时按照提示即可，安装过程中会提示SDK的安装路径，<strong>注意一定不要包含空格等特殊字符</strong></li>
+<li>第一次打开会出现如下情况<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/problem.png"><br>为了避免，可以在第一次运行AS时要在D:\Android\Android Studio\bin\idea.properties中添加<br>disable.android.first.run=true即可</li>
+</ul>
+<h4 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h4><ul>
+<li>在安装Android Studio时刻会安装SDK，但是需要更多的Android版本时，需要打开SDK Manager下载，此时需要进行翻墙，可以进行如下设置，选择Tools-&gt;options,进行下图的设置，一定要勾选Force…<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Internet.png"><br>设置完之后，选择Packages-&gt;Reload，即可下载更新<br><img src="https://raw.githubusercontent.com/monkeylzl/MarkdownPhotos/master/AndroidEnvironmentBuilding/Reload.png"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -269,6 +269,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac 外接机械键盘设置</title>
+    <url>/2021/12/12/mac%E5%A4%96%E6%8E%A5%E9%94%AE%E7%9B%98%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>一般的机械键盘和 Mac 上的键盘都有些细微的差别，主要体现在 command, Fn 两个键上</p>
+<span id="more"></span>
+
+<p>自己买了 Filco 机械键盘之后，也是搜索了对应的解法，其中一种最简单的方法就是使用 karabiner 软件，<a href="https://karabiner-elements.pqrs.org/index.html">karabiner</a>是一个简单的修改机械键盘和 Mac 键映射的小工具。使用步骤：</p>
+<ul>
+<li><p>下载安装 karabiner ： <a href="https://karabiner-elements.pqrs.org/">https://karabiner-elements.pqrs.org/</a></p>
+</li>
+<li><p>选择 Tab 中 Simple Modificatiaons,然后 Target Device 选择 Usb Keyboard</p>
+</li>
+<li><p>按照自己的习惯进行修改，这里我修改了键帽的位置，将空格左右两侧的 Alt 和 Win 键帽换掉，然后添加如下映射，解决command 和 Fn 键的映射关系，具体配置如下图：</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/monkeylzl/monkeylzl.github.io/master/picRep/mac%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E8%AE%BE%E7%BD%AE.png" alt="mac机械键盘设置"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>百度地图面试</title>
     <url>/2017/05/16/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<p>这次「百度地图的 Android 开发」面试问的非常基础，基本是涵盖了所有的Java的基础和Android的基础，数据结构和算法没有涉及到，非常的详细，很小的知识点都会覆盖，和自己最初准备的还是有些差距同时也让我认识到了基础的重要性吧，还是有些漏洞的。</p>
@@ -367,30 +391,6 @@
       </categories>
       <tags>
         <tag>面试记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac 外接机械键盘设置</title>
-    <url>/2021/12/12/mac%E5%A4%96%E6%8E%A5%E9%94%AE%E7%9B%98%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>一般的机械键盘和 Mac 上的键盘都有些细微的差别，主要体现在 command, Fn 两个键上</p>
-<span id="more"></span>
-
-<p>自己买了 Filco 机械键盘之后，也是搜索了对应的解法，其中一种最简单的方法就是使用 karabiner 软件，<a href="https://karabiner-elements.pqrs.org/index.html">karabiner</a>是一个简单的修改机械键盘和 Mac 键映射的小工具。使用步骤：</p>
-<ul>
-<li><p>下载安装 karabiner ： <a href="https://karabiner-elements.pqrs.org/">https://karabiner-elements.pqrs.org/</a></p>
-</li>
-<li><p>选择 Tab 中 Simple Modificatiaons,然后 Target Device 选择 Usb Keyboard</p>
-</li>
-<li><p>按照自己的习惯进行修改，这里我修改了键帽的位置，将空格左右两侧的 Alt 和 Win 键帽换掉，然后添加如下映射，解决command 和 Fn 键的映射关系，具体配置如下图：</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/monkeylzl/monkeylzl.github.io/master/picRep/mac%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E8%AE%BE%E7%BD%AE.png" alt="mac机械键盘设置"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>配置</tag>
       </tags>
   </entry>
   <entry>
